@@ -1,0 +1,1 @@
+insert into user values (1001, 'd@d.gr', 'Dimos');
