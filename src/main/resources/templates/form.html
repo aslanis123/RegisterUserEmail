@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>User Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>User Email Registration</h1>
+<form action="#" th:action="@{/}" th:object="${user}" method="post">
+    <p>Name: <input type="text" th:field="*{name}"><span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span></p>
+    <p>Email: <input type="text" th:field="*{email}"><span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    <input type="button" onclick="location.href='/result'" value="Show All Users">
+</form>
+</body>
+</html>

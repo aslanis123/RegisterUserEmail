@@ -3,6 +3,9 @@ package com.dimos.registration.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "user")
@@ -14,15 +17,21 @@ public class User {
     private Integer id;
 
     @Column(name = "name")
+    @Size(min = 4, max = 60)
     private String name;
 
     @Column(name = "email")
+    @Email
+    @NotNull
+    @NotEmpty
     private String email;
 
     public User(String name, String email) {
         this.name = name;
         this.email = email;
     }
+
+    public User(){}
 
     public Integer getId() {
         return id;
